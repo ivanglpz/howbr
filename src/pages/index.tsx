@@ -25,6 +25,10 @@ export default function Home() {
     <main
       className={`${geistSans.className} ${geistMono.className} h-dvh flex flex-col justify-center items-center bg-white`}
     >
+      <p className="text-green-500 font-bold text-sm">
+        {borderRadius + padding}px
+      </p>
+
       <figure
         className="border-4 flex flex-col items-start border-neutral-300 relative"
         style={{
@@ -59,7 +63,7 @@ export default function Home() {
           }}
         ></aside>
       </figure>
-
+      <p className="text-gray-500 font-bold text-sm text-center">{padding}px</p>
       <section className="absolute top-5 right-5 p-4 flex flex-col gap-4 border-2 bg-white rounded-lg w-[320px]">
         <div>
           <label className="block mb-2 text-black">

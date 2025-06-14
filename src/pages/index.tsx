@@ -14,14 +14,19 @@ const geistMono = Geist_Mono({
 export default function Home() {
   const [borderRadius, setBorderRadius] = useState(10);
   const [padding, setPadding] = useState(20);
-  const [size, setSize] = useState(400);
+  const [size, setSize] = useState(200);
   return (
     <main
       className={`${geistSans.className} ${geistMono.className} h-dvh flex flex-col  bg-white`}
     >
       <section className="flex justify-center items-center h-full">
-        <div className="flex flex-col gap-2">
-          <header className="grid grid-cols-3 ">
+        <div className="flex flex-col gap-2 justify-center items-center">
+          <header
+            className="grid grid-cols-3 w-full"
+            style={{
+              width: size,
+            }}
+          >
             <p className="text-green-500 font-bold text-sm">
               {borderRadius + padding}px
             </p>
@@ -40,14 +45,14 @@ export default function Home() {
               height: size,
             }}
           >
-            <div
+            <aside
               className="border-t-4 border-l-4 border-green-500 top-[-4px] left-[-4px] absolute  bg-transparent "
               style={{
                 borderTopLeftRadius: borderRadius + padding,
                 width: size / 2,
                 height: size / 2,
               }}
-            ></div>
+            ></aside>
             <div
               className="border-4 p-4 bg-blue-100 border-blue-300 flex justify-center items-center h-full w-full"
               style={{
@@ -56,14 +61,14 @@ export default function Home() {
             >
               <p className="text-blue-500 font-bold">{borderRadius}px</p>
             </div>
-            <div
+            <aside
               className="border-t-4 border-l-4 border-blue-500 absolute  bg-transparent "
               style={{
                 borderTopLeftRadius: borderRadius,
-                width: size / 2,
-                height: size / 2,
+                width: (size - padding * 2 - 8) / 2,
+                height: (size - padding * 2 - 8) / 2,
               }}
-            ></div>
+            ></aside>
           </figure>
           <section className="flex flex-col gap-4  w-[400px]  p-6">
             <div>
@@ -83,7 +88,7 @@ export default function Home() {
                 Padding: {padding}px
               </label>
               <Slider
-                max={100}
+                max={size / 2}
                 step={1}
                 value={[padding]}
                 onValueChange={(value) => setPadding(value[0])}
@@ -98,7 +103,9 @@ export default function Home() {
                 min={100}
                 step={1}
                 value={[size]}
-                onValueChange={(value) => setSize(value[0])}
+                onValueChange={(value) => {
+                  setSize(value[0]);
+                }}
               />
             </div>
           </section>

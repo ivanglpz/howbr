@@ -60,7 +60,7 @@ export default function Home() {
         ></aside>
       </figure>
 
-      <section className="absolute top-5 right-5 p-4 flex flex-col gap-4 border bg-white rounded-lg w-[320px]">
+      <section className="absolute top-5 right-5 p-4 flex flex-col gap-4 border-2 bg-white rounded-lg w-[320px]">
         <div>
           <label className="block mb-2 text-black">
             Border Radius: {borderRadius}px

@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 export default function Home() {
   const [borderRadius, setBorderRadius] = useState(10);
   const [padding, setPadding] = useState(20);
+  const [size, setSize] = useState(400);
   return (
     <main
       className={`${geistSans.className} ${geistMono.className} h-dvh flex flex-col  bg-white`}
@@ -35,12 +36,16 @@ export default function Home() {
             style={{
               padding,
               borderRadius: borderRadius + padding,
+              width: size,
+              height: size,
             }}
           >
             <div
-              className="border-t-4 border-l-4 border-green-500 top-[-4px] left-[-4px] absolute p-24 bg-transparent "
+              className="border-t-4 border-l-4 border-green-500 top-[-4px] left-[-4px] absolute  bg-transparent "
               style={{
                 borderTopLeftRadius: borderRadius + padding,
+                width: size / 2,
+                height: size / 2,
               }}
             ></div>
             <div
@@ -52,13 +57,15 @@ export default function Home() {
               <p className="text-blue-500 font-bold">{borderRadius}px</p>
             </div>
             <div
-              className="border-t-4 border-l-4 border-blue-500 absolute p-12 bg-transparent "
+              className="border-t-4 border-l-4 border-blue-500 absolute  bg-transparent "
               style={{
                 borderTopLeftRadius: borderRadius,
+                width: size / 2,
+                height: size / 2,
               }}
             ></div>
           </figure>
-          <section className="flex flex-col gap-4  p-6">
+          <section className="flex flex-col gap-4  w-[400px]  p-6">
             <div>
               <label className="block mb-2 text-black">
                 Border Radius: {borderRadius}px
@@ -80,6 +87,18 @@ export default function Home() {
                 step={1}
                 value={[padding]}
                 onValueChange={(value) => setPadding(value[0])}
+              />
+            </div>
+            <div>
+              <label className="block mb-2 text-black">
+                Dimension: {size}px
+              </label>
+              <Slider
+                max={500}
+                min={100}
+                step={1}
+                value={[size]}
+                onValueChange={(value) => setSize(value[0])}
               />
             </div>
           </section>

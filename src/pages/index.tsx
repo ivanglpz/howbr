@@ -152,7 +152,7 @@ export default function Home() {
                 }}
                 size="sm"
                 variant="outline"
-                className="py-4 absolute top-2 right-2"
+                className="py-4 absolute top-2 right-2 bg-black"
               >
                 <Copy className="h-4 w-4" color="white" />
               </Button>

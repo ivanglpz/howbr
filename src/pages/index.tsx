@@ -158,10 +158,12 @@ export default function Home() {
               </Button>
             </pre>
             <div className="flex flex-row items-center justify-between gap-2">
-              <p className="text-green-500">
-                rounded-[{borderRadius + safePadding}px]
-              </p>
-              <p className="text-neutral-500">p-[{safePadding}px]</p>
+              <div className="flex flex-row flex-wrap gap-2">
+                <p className="text-green-500">
+                  rounded-[{borderRadius + safePadding}px]
+                </p>
+                <p className="text-neutral-500">p-[{safePadding}px]</p>
+              </div>
               <Button
                 onClick={() => {
                   navigator.clipboard.writeText(
